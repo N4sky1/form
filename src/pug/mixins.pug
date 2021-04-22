@@ -1,0 +1,10 @@
+include mixins/svg
+
+mixin form-data-item(name)
+    li.data__item
+        p= name
+        span
+mixin skill-list-item(name, active)
+    li.skills__list-item
+        div(class="skills__list-item-check " + active)
+        .skills__list-item-name= name

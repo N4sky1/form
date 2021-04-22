@@ -1,0 +1,57 @@
+extends pug/base
+
+prepend vars
+	-
+		var formDataItems = [
+			{name: "Никита"},
+			{name: "06.03.1992"},
+			{name: "Новосибирск"},
+			{name: "telegram @nikita_powers"}
+		]
+		var skillsListItems = [
+			{name: "HTML5", active: "active"},
+			{name: "SASS", active: "active"},
+			{name: "VANILLAJS", active: "active"},
+			{name: "GIT", active: "active"},
+			{name: "css3", active: "active"},
+			{name: "LESS", active: ""},
+			{name: "ANGULAR", active: ""},
+			{name: "FOUNDATION", active: ""},
+			{name: "БЭМ", active: "active"},
+			{name: "gULP", active: "active"},
+			{name: "JQUERY", active: ""},
+			{name: "BOOTSTRAP", active: ""}
+		]
+
+append vars
+	//-
+
+
+block content
+	header.header.section
+		img.header__img(src="images/i.jpg" alt="my photo")
+		ul.header__form-data.form-data 
+			each formDataItem in formDataItems
+				+form-data-item(formDataItem.name)
+			img.header__approved-img(src="images/approved.png" srcset="images/approved@2x.png 2x" alt="my photo")
+
+	section.skills.section 
+		h2.skills__title 
+			| Навыки
+		ul.skills__list 	
+			each skillsListItem in skillsListItems
+				+skill-list-item(skillsListItem.name, skillsListItem.active)
+
+	section.scale.section 
+		.scale__img-wrap 
+			img.scale__img(src="images/scale.png" srcset="images/scale@2x.png 2x" alt="scale") 
+			img.scale__cursor(src="images/cursor.png" srcset="images/cursor@2x.png 2x" alt="scale")
+		.scale__descrption 	
+			.scale__title 
+				| Мой уровень владения <br>Java Script
+			.scale__number 
+				| 581
+
+
+
+			
